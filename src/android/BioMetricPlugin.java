@@ -28,7 +28,7 @@ public class BioMetricPlugin extends CordovaPlugin {
 
     private void coolMethod(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
-            callbackContext.success(message);
+            callbackContext.success("Message : " + message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
@@ -38,7 +38,7 @@ public class BioMetricPlugin extends CordovaPlugin {
         try{
         String No1 = args.getString(0);
         //String No2 = args.getString();
-        callbackContext.success(No1);
+        callbackContext.success("value : " + No1);
         // int val1 = Integer.parseInt(No1);
         // int val2 = Integer.parseInt(No2);
         // int val3 = val1 + val2;
