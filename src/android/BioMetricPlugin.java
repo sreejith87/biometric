@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.AnotherClass;
+
 
 /**
  * This class echoes a string called from JavaScript.
