@@ -7,8 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -21,13 +19,10 @@ public class BioMetricPlugin extends CordovaPlugin {
             this.coolMethod(message, callbackContext);
             return true;
         } else if (action.equals("addMethod")) {
-            String No1 = args.getJSONObject(0).getString("Parm1");
-            String No2 = args.getJSONObject(0).getString("Parm2");
-            this.addMethod(No1, No2, callbackContext);
+            this.addMethod(args, callbackContext);
             return true;
-        }  
+        }
 
-        
         return false;
     }
 
@@ -39,10 +34,17 @@ public class BioMetricPlugin extends CordovaPlugin {
         }
     }
 
-    private void addMethod(String no1, String no2, CallbackContext callbackContext) {
+    private void addMethod(JSONArray args, CallbackContext callbackContext) {
+        try{
+        String No1 = args.getJSONObject(0).getString("Parm1");
+        String No2 = args.getJSONObject(0).getString("Parm2");
         int val1 = Integer.parseInt(no1);
         int val2 = Integer.parseInt(no2);
         int val3 = val1 + val2;
         callbackContext.success(val3);
+        } catch(exc) {
+            callbackContext.error(exc);
+        }
+        
     }
 }
