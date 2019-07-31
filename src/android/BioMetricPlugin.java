@@ -43,7 +43,7 @@ public class BioMetricPlugin extends CordovaPlugin {
         int val3 = val1 + val2;
         callbackContext.success(val3);
         } catch(Exception exc) {
-            callbackContext.error(exc);
+            callbackContext.error(exc.toString());
         }
         
     }
