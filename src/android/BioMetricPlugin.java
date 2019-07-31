@@ -38,10 +38,11 @@ public class BioMetricPlugin extends CordovaPlugin {
         try{
         String No1 = args.getJSONObject(0).getString("Parm1");
         String No2 = args.getJSONObject(0).getString("Parm2");
-        int val1 = Integer.parseInt(No1);
-        int val2 = Integer.parseInt(No2);
-        int val3 = val1 + val2;
-        callbackContext.success(val3);
+        callbackContext.success(No1 + " " + No2);
+        //int val1 = Integer.parseInt(No1);
+        //int val2 = Integer.parseInt(No2);
+        //int val3 = val1 + val2;
+        //callbackContext.success(val3);
         } catch(Exception exc) {
             callbackContext.error(exc.toString());
         }
