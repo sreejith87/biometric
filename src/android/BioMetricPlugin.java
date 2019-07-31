@@ -1,4 +1,4 @@
-package cordova_plugin_biometric;
+package cordova.plugin.biometric;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -25,10 +25,7 @@ public class BioMetricPlugin extends CordovaPlugin {
             String No2 = args.getString(1);
             this.addMethod(No1, No2, callbackContext);
             return true;
-        }  else if (action.equals("anotherClassMethod")) {
-            this.anotherClassMethod(callbackContext);
-            return true;
-        }
+        }  
 
         
         return false;
@@ -49,10 +46,4 @@ public class BioMetricPlugin extends CordovaPlugin {
         callbackContext.success(val3);
     }
 
-    private void anotherClassMethod(CallbackContext callbackContext) {
-        // AnotherClass ac = new AnotherClass();
-        // String retVal = ac.myMethod();
-        // callbackContext.success(retVal);
-        callbackContext.success("success");
-    }
 }
