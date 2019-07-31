@@ -50,8 +50,9 @@ public class BioMetricPlugin extends CordovaPlugin {
     }
 
     private void anotherClassMethod(CallbackContext callbackContext) {
-        AnotherClass ac = new AnotherClass();
-        String retVal = ac.myMethod();
-        callbackContext.success(retVal);
+        // AnotherClass ac = new AnotherClass();
+        // String retVal = ac.myMethod();
+        // callbackContext.success(retVal);
+        callbackContext.success("success");
     }
 }
