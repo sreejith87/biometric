@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.AnotherClass;
+
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -23,7 +25,12 @@ public class BioMetricPlugin extends CordovaPlugin {
             String No2 = args.getString(1);
             this.addMethod(No1, No2, callbackContext);
             return true;
+        }  else if (action.equals("anotherClassMethod")) {
+            this.anotherClassMethod(callbackContext);
+            return true;
         }
+
+        
         return false;
     }
 
@@ -36,6 +43,15 @@ public class BioMetricPlugin extends CordovaPlugin {
     }
 
     private void addMethod(String no1, String no2, CallbackContext callbackContext) {
-        callbackContext.success("no1 : " + no1 + "  no2 : " + no2);
+        int val1 = Integer.parseInt(no1);
+        int val2 = Integer.parseInt(no2);
+        int val3 = val1 + val2;
+        callbackContext.success(val3);
+    }
+
+    private void anotherClassMethod(CallbackContext callbackContext) {
+        AnotherClass ac = new AnotherClass();
+        String retVal = ac.myMethod();
+        callbackContext.success(retVal);
     }
 }
