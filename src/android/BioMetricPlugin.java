@@ -20,11 +20,6 @@ public class BioMetricPlugin extends CordovaPlugin {
             String No2 = args.getJSONObject(0).getString("Parm2");
             this.addMethod(No1, No2, callbackContext);
                 return true;
-        }
-
-
-
-
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
