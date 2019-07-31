@@ -7,10 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-/**
- * This class echoes a string called from JavaScript.
- */
 public class BioMetricPlugin extends CordovaPlugin {
 
     @Override
@@ -20,19 +16,15 @@ public class BioMetricPlugin extends CordovaPlugin {
             this.coolMethod(message, callbackContext);
             return true;
         } else if (action.equals("addMethod")) {
-            String No1 = args.getString(0);
-            String No2 = args.getString(1);
+            String No1 = args.getJSONObject(0).getString("Parm1");
+            String No2 = args.getJSONObject(0).getString("Parm2");
             this.addMethod(No1, No2, callbackContext);
-            return true;
-        }  
+                return true;
+        }
 
-        
-        return false;
-    }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
+
+
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
