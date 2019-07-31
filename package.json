@@ -1,0 +1,17 @@
+{
+  "name": "biometricplugin",
+  "version": "1.0.0",
+  "description": "biometric injes plugin for device FRT1012 created by sreejith",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "injes",
+    "frt1012",
+    "bluetooth",
+    "biometric"
+  ],
+  "author": "sreejith",
+  "license": "ISC"
+}

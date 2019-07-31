@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova_plugin_biometric" version="1.0.0">
+   <name>BioMetricPlugin</name>
+   <js-module name="BioMetricPlugin" src="www/BioMetricPlugin.js">
+      <clobbers target="cordova.plugins.BioMetricPlugin" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="BioMetricPlugin">
+            <param name="android-package" value="cordova.plugin.biometric.BioMetricPlugin" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/BioMetricPlugin.java" target-dir="src/cordova/plugin/biometric/BioMetricPlugin" />
+   </platform>
+</plugin>
