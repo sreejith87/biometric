@@ -1,6 +1,6 @@
 var exec = require('cordova/exec');
 
-coolMethod = function (arg0, success, error) {
+exports.coolMethod = function (arg0, success, error) {
     exec(success, error, 'BioMetricPlugin', 'coolMethod', [arg0]);
 };
 
