@@ -16,8 +16,9 @@ public class BioMetricPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
             //String message = args.getString(0);
-            String message = "sreejith";
-            this.coolMethod(message, callbackContext);
+            //String message = "sreejith";
+            //this.coolMethod(message, callbackContext);
+            this.coolMethod(callbackContext);
             return true;
         } 
         // else if (action.equals("addMethod")) {
@@ -28,12 +29,13 @@ public class BioMetricPlugin extends CordovaPlugin {
         return false;
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
-        }
+    private void coolMethod(CallbackContext callbackContext) {
+        // if (message != null && message.length() > 0) {
+        //     callbackContext.success(message);
+        // } else {
+        //     callbackContext.error("Expected one non-empty string argument.");
+        // }
+        callbackContext.success("Hi sree");
     }
 
     // private void addMethod(JSONObject args, CallbackContext callbackContext) {
