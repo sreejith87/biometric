@@ -15,7 +15,8 @@ public class BioMetricPlugin extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("coolMethod")) {
-            String message = args.getString(0);
+            //String message = args.getString(0);
+            String message = "sreejith";
             this.coolMethod(message, callbackContext);
             return true;
         } 
